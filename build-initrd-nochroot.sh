@@ -66,6 +66,10 @@ cp -av conf/halium ${tmpdir}/etc/initramfs-tools/conf.d
 cp -av scripts/* ${tmpdir}/etc/initramfs-tools/scripts
 cp -av hooks/* ${tmpdir}/etc/initramfs-tools/hooks
 
+if [ $# -eq 1 ] then
+    cp -av $1 ${tmpdir}/etc/initramfs-tools
+fi
+
 # Finally build
 mkdir -p ${OUT}
 exec /usr/sbin/mkinitramfs -d ${tmpdir}/etc/initramfs-tools -o ${OUT}/initrd.img-halium-generic -v
