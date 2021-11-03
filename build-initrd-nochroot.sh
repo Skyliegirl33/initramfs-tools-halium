@@ -67,7 +67,7 @@ cp -av scripts/* ${tmpdir}/etc/initramfs-tools/scripts
 cp -av hooks/* ${tmpdir}/etc/initramfs-tools/hooks
 
 if [ $# -eq 1 ] then
-    cp -av $1 ${tmpdir}/etc/initramfs-tools
+    cp -av "$1"/* ${tmpdir}/etc/initramfs-tools
 fi
 
 # Finally build
